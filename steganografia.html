@@ -1,15 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0068)file:///C:/Users/AbdelKader%20Mahmoud%20S/Desktop/steganografia.html -->
+<!-- Se stai guardando questo probabilmente la commissione lo ha chiesto. -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Information Hiding: Steganography done with JavaScript</title>
-		<meta content="index, follow" name="robots">
-		<meta content="Peter Eigenschink" name="author">
-		<meta content="This demo shows the core functionality of my JavaScript library steganography.js, which provides functions to hide or read data in or from the alpha channel of an image." name="description">
-		<meta content="steganography, information hiding, javascript, html5" name="keywords">
-		
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="http://www.peter-eigenschink.at/blog/favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<title>Steganografia</title>
 		<style>
 			body, html {
 				margin:0;
@@ -189,17 +181,17 @@ Visualizzare un messaggio nascosto:<br>
 
 			var files = evt.target.files; 
 
-			// Loop through the FileList and render image files as thumbnails.
+			// ya ya ya 
 			for (var i = 0, f; f = files[i]; i++) {
 
-				// Only process image files.
+				// solo immagini
 				if (!f.type.match('image.*')) {
 					continue;
 				}
 
 				var reader = new FileReader();
 
-				// Closure to capture the file information.
+				// prendi info immagine
 				reader.onload = (function(theFile) {
 					return function(e) {
 						img.src = e.target.result;
@@ -212,7 +204,7 @@ Visualizzare un messaggio nascosto:<br>
 					};
 				})(f);
 
-				// Read in the image file as a data URL.
+				// ok
 				reader.readAsDataURL(f);
 			}
 		}
