@@ -1,0 +1,81 @@
+<html>
+<header>
+    <title>
+        Esketit
+    </title>
+</header>
+<body style="center">
+<script>
+var names = ["John","Cesare","Sergio","Federico","Poragi","Mark","Marco","Jon","Bobby","Bob","Paul","Tommy","Tom"];
+var surnames = ["Anderson","Gregori","Gates","Paulire","Costa","Bucks","Hok","Tarquini","Cipollini","Sumero","Johnson"];
+var emails = ["gmail.com","outlook.it","zmail.it","hotmail.com","yahoo.com"]
+var http = new XMLHttpRequest();
+var url = 'https://lovinmaltamusicawards.com';
+
+function submitForm(nome,posta){
+    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=374&input_4=Sean Quincy&input_5= &is_submit_1=1&gform_submit=1";
+    http.open('POST', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send(params);
+}
+function bot(){
+    var x = document.getElementById("votes").value; 
+
+    for (i = 0; i < x ; i++ ){
+        var user_name = (names[Math.floor(Math.random() * names.length)])+" "+(surnames[Math.floor(Math.random() * surnames.length)]);
+        var user_email = (names[Math.floor(Math.random() * names.length)])+"_"+(surnames[Math.floor(Math.random() * surnames.length)])+"@"+(emails[Math.floor(Math.random() * emails.length)]);
+        document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act");
+        document.write("<br>");  
+        submitForm(user_name,user_email);
+        submitForm(user_name,user_email);
+        submitForm(user_name,user_email);
+
+    }
+}
+
+</script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    body {
+    background-color : #ffffff;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color : #000000;
+    text-align : center;
+    font-family: "SIMPSON";
+}
+form {
+    width: 1000px;
+    margin: 0 auto;
+}
+</style>
+<form class="form-horizontal" align="center">
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend>Quincy's BOT</legend>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Votes:</label>  
+          <div class="col-md-4">
+          <input id="votes" name="votes" type="text" placeholder="Enter Votes" class="form-control input-md">
+          <span class="help-block">aye</span>  
+          </div>
+        </div>
+        
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="singlebutton">Submit</label>
+          <div class="col-md-4">
+            <button onclick="bot()" id="submit" name="submit" class="btn btn-primary">C'mon</button>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+<div id="skere" name="skere"></div>
+</body>
+</html>
