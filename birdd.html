@@ -6,29 +6,36 @@
 </header>
 <body style="center">
 <script>
-var names = ["Hillary","dick","paula","kinga","coglione","simpy","lorenzo","dre","yanosh","John","Cesare","Sergio","Federico","Poragi","Mark","Marco","Jon","Bobby","Bob","Paul","Tommy","Tom"];
-var surnames = ["Anderson","Gregori","Gates","Paulire","Costa","Bucks","Hok","Tarquini","Cipollini","Sumero","Johnson"];
-var emails = ["gmail.com","outlook.it","zmail.it","hotmail.com","yahoo.com"]
+var names = ["Hillary","dick","paula","kinga","coglione","simpy","lorenzo","dre","yanosh","John","Cesare","Sergio","Federico","Poragi","Mark","Marco","Jon","Bobby","Bob","Paul","Tommy","Tom"];var surnames = ["Anderson","Gregori","Gates","Paulire","Costa","Bucks","Hok","Tarquini","Cipollini","Sumero","Johnson"];
+var emails = ["gmail.com","outlook.it","zmail.it","hotmail.com","yahoo.com"];
+var description_1 = ["Motion","motion","glow","Glow","What if","what if","He","he","chris","Chris","chris birdd"];
+var description_2 = ["absolutely","definitely","obviously"," "," "];
+var description_3 = ["the best in the maltese scene", "deserves the urban hip hop throne", "is so cool", "it's on my radio non stop", "a drug for me"];
 var http = new XMLHttpRequest();
 var url = 'https://lovinmaltamusicawards.com';
-function submitForm(nome,posta){
-    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=377&input_4=Chris Birdd&input_5= &is_submit_1=1&gform_submit=1";
+
+function submitForm(nome,posta,descrizione){
+    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=374&input_4=Sean Quincy&input_5=String(descrizione)&is_submit_1=1&gform_submit=1";
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.send(params);
 }
 function bot(){
     var x = document.getElementById("votes").value; 
+
     for (i = 0; i < x ; i++ ){
+        var descrizione = (description_1[Math.floor(Math.random() * description_1.length)])+" "+(description_2[Math.floor(Math.random() * description_2.length)])+" "+(description_3[Math.floor(Math.random() * description_3.length)]);
         var user_name = (names[Math.floor(Math.random() * names.length)])+" "+(surnames[Math.floor(Math.random() * surnames.length)]);
         var user_email = (names[Math.floor(Math.random() * names.length)])+"_"+(surnames[Math.floor(Math.random() * surnames.length)])+"@"+(emails[Math.floor(Math.random() * emails.length)]);
-        document.write(user_name+" "+user_email+" voted for Chris Birdd");
+        document.write(user_name+" "+user_email+" voted for Chris Birdd as best urban hip hop act with description "+descrizione);
         document.write("<br>");  
         submitForm(user_name,user_email);
         submitForm(user_name,user_email);
         submitForm(user_name,user_email);
+
     }
 }
+
 </script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
@@ -51,7 +58,7 @@ form {
         <fieldset>
         
         <!-- Form Name -->
-        <legend>Birdd's BOT</legend>
+        <legend>Quincy's BOT</legend>
         
         <!-- Text input-->
         <div class="form-group">
