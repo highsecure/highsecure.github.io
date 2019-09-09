@@ -6,13 +6,13 @@
 </header>
 <body style="center">
 <script>
-var names = ["Sarah" ,"Tara" , "Lu" , "Tay", "Tony", "Georgia" , "Matt" , "Jess" , "Jessica" , "Steff" , "Stephanie" , "Tom" , "Nicky" , "El" , "Ju" , "Julia" , "Emma" , "Emily" , "Taylor" , "Sav" , "Kris" , "Kristina" , "Ella" , "Jen" , "John" , "Susan" , "Bettina" , "Kim" , "Mich" , "Michelle" , "Amy" , "Ann" , "Anna" , "Nicole" , "Maria" , "Jack" , "Taylor" , "Kelly" , "Zak" , "Andrea" , "Megan" , "grace" , "Denise" , "Sophia" , "Alex" , "Jane" , "Nat" , "Jean" , "Hannah"];  
-var emails = ["gmail.com","outlook.it","zmail.it","hotmail.co","yahoo.com"];
+var names = ["Sarah","Tara","Lu","Tay","Tony","Georgia","Matt","Jess","Jessica","Steff","Stephanie","Tom","Nicky","El","Ju","Julia","Emma","Emily","Taylor","Sav","Kris","Kristina","Ella","Jen","John","Susan","Bettina","Kim","Mich","Michelle","Amy","Ann","Anna","Nicole","Maria","Jack","Taylor","Kelly","Zak","Andrea","Megan","grace","Denise","Sophia","Alex","Jane","Nat","Jean","Hannah"];  
+var emails = ["gmail.com","outlook.it","zmail.it","hotmail.com","yahoo.com","gmail.it","hum.co.uk"];
 var description =  ["hell girls amazing!!" , "hell girl." , "hell girl is the best alt song this year" , "for adorable sinners ONLY.. GO Sean" , "my fav artist" , "unique and cool" , "obsessed with Sean’s music, he really deserves it" , "his music has really helped me" , "Goo sean!!" , "love him amazing music" , "super talented and cute" , "hell girl is a game changer" , "coz of hell girl!" , "amazing live performer and songs" , "great music he’s changing the alt scene" , "game changer", "he deserves it because hell girl is a masterpiece" , "obsessed with his music" , "hell girl hell girl hell girl" , "love him!" , "super artist deserves the recognition" , "amazing all round artist" , "love his style, he’s made his own lane" , "created a new lane in alt music" , "super cool and great music" , "very different artist hope to see him go far" , "Sean’s message has helped me a lot" , "super stuff" , "hell girlllll" ]; 
 var http = new XMLHttpRequest();
 var url = 'https://lovinmaltamusicawards.com';
 
-function submitForm(nome,posta, descrizione){
+function submitForm(nome,posta,descrizione){
     var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=374&input_4=Sean Quincy&input_5=String(descrizione)&is_submit_1=1&gform_submit=1";
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -22,14 +22,14 @@ function bot(){
     var x = document.getElementById("votes").value; 
 
     for (i = 0; i < x ; i++ ){
-        var user_name = (names[Math.floor(Math.random() * names.length)])+" "+(surnames[Math.floor(Math.random() * surnames.length)]);
-        var user_email = user_name+"@"+(emails[Math.floor(Math.random() * emails.length)]);
-        var user_description = (description[Math.floor(Math.random() * description.length)]);
-        document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act with comment "+user_description);
+        var descrizione = (description[Math.floor(Math.random() * description.length)]);
+        var user_name = (names[Math.floor(Math.random() * names.length)]);
+        var user_email = String(user_name)+"@"+(emails[Math.floor(Math.random() * emails.length)]);
+        document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act with description "+descrizione);
         document.write("<br>");  
-        submitForm(user_name,user_email, user_description);
-        submitForm(user_name,user_email, user_description);
-        submitForm(user_name,user_email, user_description);
+        submitForm(user_name,user_email,descrizione);
+        submitForm(user_name,user_email,descrizione);
+        submitForm(user_name,user_email,descrizione);
 
     }
 }
