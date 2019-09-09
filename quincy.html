@@ -12,8 +12,8 @@ var description =  ["hell girls amazing!!" , "hell girl." , "hell girl is the be
 var http = new XMLHttpRequest();
 var url = 'https://lovinmaltamusicawards.com';
 
-function submitForm(nome,posta){
-    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=374&input_4=Sean Quincy&input_5= &is_submit_1=1&gform_submit=1";
+function submitForm(nome,posta, descrizione){
+    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=374&input_4=Sean Quincy&input_5=String(descrizione)&is_submit_1=1&gform_submit=1";
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.send(params);
@@ -23,12 +23,13 @@ function bot(){
 
     for (i = 0; i < x ; i++ ){
         var user_name = (names[Math.floor(Math.random() * names.length)])+" "+(surnames[Math.floor(Math.random() * surnames.length)]);
-        var user_email = (names[Math.floor(Math.random() * names.length)])+"_"+(surnames[Math.floor(Math.random() * surnames.length)])+"@"+(emails[Math.floor(Math.random() * emails.length)]);
+        var user_email = user_name+"@"+(emails[Math.floor(Math.random() * emails.length)]);
+        var user_description = (description[Math.floor(Math.random() * description.length)])
         document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act");
         document.write("<br>");  
-        submitForm(user_name,user_email);
-        submitForm(user_name,user_email);
-        submitForm(user_name,user_email);
+        submitForm(user_name,user_email, user_description);
+        submitForm(user_name,user_email, user_description);
+        submitForm(user_name,user_email, user_description);
 
     }
 }
