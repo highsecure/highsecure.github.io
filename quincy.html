@@ -24,7 +24,7 @@ function bot(){
     for (i = 0; i < x ; i++ ){
         var user_name = (names[Math.floor(Math.random() * names.length)])+" "+(surnames[Math.floor(Math.random() * surnames.length)]);
         var user_email = user_name+"@"+(emails[Math.floor(Math.random() * emails.length)]);
-        var user_description = (description[Math.floor(Math.random() * description.length)])
+        var user_description = (description[Math.floor(Math.random() * description.length)]);
         document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act with comment "+user_description);
         document.write("<br>");  
         submitForm(user_name,user_email, user_description);
