@@ -6,16 +6,16 @@
 </header>
 <body style="center">
 <script>
-var names = ["Sarah","Tara","Lu","Tay","Tony","Georgia","Matt","Jess","Jessica","Steff","Stephanie","Tom","Nicky","El","Ju","Julia","Emma","Emily","Taylor","Sav","Kris","Kristina","Ella","Jen","John","Susan","Bettina","Kim","Mich","Michelle","Amy","Ann","Anna","Nicole","Maria","Jack","Taylor","Kelly","Zak","Andrea","Megan","grace","Denise","Sophia","Alex","Jane","Nat","Jean","Hannah"];  
-var emails = ["gmail.com","gmxmail.com","gmail.com","protonmail.com","mail.com","hotmail.com","yahoo.com","hum.co.uk"];
-var surnames =  ["brown", "wilson", "evans", "white", "zammit", "borg", "azoppardi", "portelli", "mizzi", "harris", "clark", "jackson", "ward", "cooper", "philips", "singh", "grant", "pearson", "atkinson", "hart", "wallace", "newman", "gardner", "stevenson", "nicholson", "sheperd", "parsons", "barnett", "camilleri", "farrugia", "spiteri", "miller", "wilson", "anderson", "thompson", "roberts", "richardson", "vella", "coleman", "murray", "ortiz", "crawford", "kennedy", "hunter", "wells"]; 
-var description =  ["hell girls amazing!!" , "hell girl." , "hell girl is the best alt song this year" , "for adorable sinners ONLY.. GO Sean" , "my fav artist" , "unique and cool" , "obsessed with Sean’s music, he really deserves it" , "his music has really helped me" , "Goo sean!!" , "love him amazing music" , "super talented and cute" , "hell girl is a game changer" , "coz of hell girl!" , "amazing live performer and songs" , "great music he’s changing the alt scene" , "game changer", "he deserves it because hell girl is a masterpiece" , "obsessed with his music" , "hell girl hell girl hell girl" , "love him!" , "super artist deserves the recognition" , "amazing all round artist" , "love his style, he’s made his own lane" , "created a new lane in alt music" , "super cool and great music" , "very different artist hope to see him go far" , "Sean’s message has helped me a lot" , "super stuff" , "hell girlllll" ]; 
+var names = ["chris", "john", "amy", "lucy", "andrew", "andy", "becky", "matt", "james", "luke", "nicky", "andrea", "alex", "maria", "lyla", "ruby", "lauren", "tara", "jess", "kelly", "george", "sophie", "clint", "jean", "jp", "max", "benji", "ben", "charles", "charlie", "bex", "aaron", "justin", "Justin", "Andrew", "tony", "Toni", "greg", "gordon", "joe", "joseph", "eman", "Emanuele", "ricardo", "lee", "Lee", "matteo", "julia", "dan", "danny", "daniel", "Daniela", "Dan"];  
+var emails = ["gmail.com","gmxmail.com","gmail.com","protonmail.com","mail.com","hotmail.com","yahoo.com"];
+var surnames =  ["borg", "Borg", "Camilleri", "camilleri", "mifsud", "Mifsud", "degabrielle", "agius", "debono", "Debono", "Mizzi", "miller", "marcieca", "vella", "stivala", "foley", "sammut", "cachia", "Cachia", "Gatt", "blake", "clark", "grech", "Grech", "Sant cassia", "Castillo", "scicluna", "Scicluna", "Aquilina", "Azzopardi", "azzopardi", "bonnici", "Scerri", "scerri", "arrigo", "Muscat", "muscat","brown", "wilson", "evans", "white", "zammit", "borg", "azoppardi", "portelli", "mizzi", "harris", "clark", "jackson", "ward", "cooper", "philips", "singh", "grant", "pearson", "atkinson", "hart", "wallace", "newman", "gardner", "stevenson", "nicholson", "sheperd", "parsons", "barnett", "camilleri", "farrugia", "spiteri", "miller", "wilson", "anderson", "thompson", "roberts", "richardson", "vella", "coleman", "murray", "ortiz", "crawford", "kennedy", "hunter", "wells"]; 
+var description =  ["talent", "love his music so much", "his lyrics are great", "go chris!!", "production and music is all made by him", "tajjeb hafna", "great artist all round", "not many like him", "making us proud abroad", "he deserves this", "great music", "Great music", "Love the music", "He’s great", "super talented!", "The music is amazing", "relatable music", "perfect music for all moods", "Perfect for all times!", "best on the island", "Best in malta", "Best in Malta", "he does all the music himself", "his production is crazy", "love his production and voice", "love all the songs", "been a life long fan", "fan for a long time and love watching him grow", "great seeing this guy go places with his music", "amazing to see this guy grow", "he’s doing great things for the scene", "putting malta on the map", "really helping malta get known abroad", "id disk tajbin !", "no one better", "he’s the best!", "chris birdd does all the music himself, even the production", "he does all the production and music", "his lyrics and production are all him!", "great songs and big numbers", "he has a lot of plays!"]; 
 var xanax = ["", "_"] ;
 var http = new XMLHttpRequest();
 var url = 'https://lovinmaltamusicawards.com';
 
 function submitForm(nome,posta,descrizione){
-    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=374&input_4=Sean Quincy&input_5=String(descrizione)&is_submit_1=1&gform_submit=1";
+    var params = "input_1.3="+String(nome)+"&input2="+String(posta) +"&input_3=377&input_4=Chris Birdd&input_5=String(descrizione)&is_submit_1=1&gform_submit=1";
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.send(params);
@@ -27,7 +27,7 @@ function bot(){
         var descrizione = (description[Math.floor(Math.random() * description.length)]);
         var user_name = (names[Math.floor(Math.random() * names.length)]);
         var user_email = String(user_name)+(xanax[Math.floor(Math.random() * xanax.length)])+(surnames[Math.floor(Math.random() * surnames.length)])+"@"+(emails[Math.floor(Math.random() * emails.length)]);
-        document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act with description "+descrizione);
+        document.write(user_name+" "+user_email+" voted for chris birdd as best hip hop act with description "+descrizione);
         document.write("<br>");  
         submitForm(user_name,user_email,descrizione);
         submitForm(user_name,user_email,descrizione);
@@ -58,7 +58,7 @@ form {
         <fieldset>
         
         <!-- Form Name -->
-        <legend>Quincy's BOT</legend>
+        <legend>Birdd's BOT</legend>
         
         <!-- Text input-->
         <div class="form-group">
