@@ -6,11 +6,11 @@
 </header>
 <body style="center">
 <script>
-var names = ["Hillary","dick","paula","kinga","coglione","simpy","lorenzo","dre","yanosh","John","Cesare","Sergio","Federico","Poragi","Mark","Marco","Jon","Bobby","Bob","Paul","Tommy","Tom"];var surnames = ["Anderson","Gregori","Gates","Paulire","Costa","Bucks","Hok","Tarquini","Cipollini","Sumero","Johnson"];
-var emails = ["gmail.com","outlook.it","zmail.it","hotmail.com","yahoo.com"];
-var description_1 = ["Motion","motion","glow","Glow","What if","what if","He","he","chris","Chris","chris birdd"];
-var description_2 = ["absolutely","definitely","obviously"," "," "];
-var description_3 = ["the best in the maltese scene", "deserves the urban hip hop throne", "is so cool", "it's on my radio non stop", "a drug for me"];
+var names = ["Sarah","Tara","Lu","Tay","Tony","Georgia","Matt","Jess","Jessica","Steff","Stephanie","Tom","Nicky","El","Ju","Julia","Emma","Emily","Taylor","Sav","Kris","Kristina","Ella","Jen","John","Susan","Bettina","Kim","Mich","Michelle","Amy","Ann","Anna","Nicole","Maria","Jack","Taylor","Kelly","Zak","Andrea","Megan","grace","Denise","Sophia","Alex","Jane","Nat","Jean","Hannah"];  
+var emails = ["gmail.com","gmxmail.com","gmail.com","protonmail.com","mail.com","hotmail.com","yahoo.com","hum.co.uk"];
+var surnames =  ["brown", "wilson", "evans", "white", "zammit", "borg", "azoppardi", "portelli", "mizzi", "harris", "clark", "jackson", "ward", "cooper", "philips", "singh", "grant", "pearson", "atkinson", "hart", "wallace", "newman", "gardner", "stevenson", "nicholson", "sheperd", "parsons", "barnett", "camilleri", "farrugia", "spiteri", "miller", "wilson", "anderson", "thompson", "roberts", "richardson", "vella", "coleman", "murray", "ortiz", "crawford", "kennedy", "hunter", "wells"]; 
+var description =  ["hell girls amazing!!" , "hell girl." , "hell girl is the best alt song this year" , "for adorable sinners ONLY.. GO Sean" , "my fav artist" , "unique and cool" , "obsessed with Sean’s music, he really deserves it" , "his music has really helped me" , "Goo sean!!" , "love him amazing music" , "super talented and cute" , "hell girl is a game changer" , "coz of hell girl!" , "amazing live performer and songs" , "great music he’s changing the alt scene" , "game changer", "he deserves it because hell girl is a masterpiece" , "obsessed with his music" , "hell girl hell girl hell girl" , "love him!" , "super artist deserves the recognition" , "amazing all round artist" , "love his style, he’s made his own lane" , "created a new lane in alt music" , "super cool and great music" , "very different artist hope to see him go far" , "Sean’s message has helped me a lot" , "super stuff" , "hell girlllll" ]; 
+var xanax = ["", "_"] ;
 var http = new XMLHttpRequest();
 var url = 'https://lovinmaltamusicawards.com';
 
@@ -24,14 +24,14 @@ function bot(){
     var x = document.getElementById("votes").value; 
 
     for (i = 0; i < x ; i++ ){
-        var descrizione = (description_1[Math.floor(Math.random() * description_1.length)])+" "+(description_2[Math.floor(Math.random() * description_2.length)])+" "+(description_3[Math.floor(Math.random() * description_3.length)]);
-        var user_name = (names[Math.floor(Math.random() * names.length)])+" "+(surnames[Math.floor(Math.random() * surnames.length)]);
-        var user_email = (names[Math.floor(Math.random() * names.length)])+"_"+(surnames[Math.floor(Math.random() * surnames.length)])+"@"+(emails[Math.floor(Math.random() * emails.length)]);
-        document.write(user_name+" "+user_email+" voted for Chris Birdd as best urban hip hop act with description "+descrizione);
+        var descrizione = (description[Math.floor(Math.random() * description.length)]);
+        var user_name = (names[Math.floor(Math.random() * names.length)]);
+        var user_email = String(user_name)+(xanax[Math.floor(Math.random() * xanax.length)])+(surnames[Math.floor(Math.random() * surnames.length)])+"@"+(emails[Math.floor(Math.random() * emails.length)]);
+        document.write(user_name+" "+user_email+" voted for Sean Quincy as best alternative act with description "+descrizione);
         document.write("<br>");  
-        submitForm(user_name,user_email);
-        submitForm(user_name,user_email);
-        submitForm(user_name,user_email);
+        submitForm(user_name,user_email,descrizione);
+        submitForm(user_name,user_email,descrizione);
+        submitForm(user_name,user_email,descrizione);
 
     }
 }
